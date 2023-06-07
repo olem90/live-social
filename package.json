@@ -1,0 +1,12 @@
+{
+  "name": "live-social",
+  "version": "0.0.1",
+  "description": "An example social media client written in vanilla JavaScript.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Oliver Dipple <oliver.dipple@noroff.no>",
+  "license": "ISC"
+}
