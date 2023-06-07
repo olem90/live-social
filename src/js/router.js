@@ -1,15 +1,24 @@
 import * as routes from "./routes/index.js";
 
 export function router() {
-    routeByURL(window.location.href);
+    updateRoute()
     window.addEventListener("hashchange", ({ newURL }) => routeByURL(newURL));
 }
 
-function stripHash(input = "") {
+export function updateRoute() {
+    routeByURL(window.location.href);
+}
+
+export function redirect(path) {
+    window.history.pushState("", undefined, path)
+    updateRoute()
+}
+
+export function stripHash(input = "") {
     return input.replace(/#/gm, "")
 }
 
-function extractQuery(input = "") {
+export function extractQuery(input = "") {
     const [hash, search] = input.split("?")
     return {
         hash: stripHash(hash),
@@ -17,13 +26,13 @@ function extractQuery(input = "") {
     }
 }
 
-function routeByURL(url) {
+export function routeByURL(url) {
     url = new URL(url);
     const { hash, params } = extractQuery(url.hash)
     route(hash, params);
 }
 
-async function route(location, params = new URLSearchParams()) {
+export async function route(location, params = new URLSearchParams()) {
     switch (location.toLocaleLowerCase()) {
         case "/":
             return await routes.home()
