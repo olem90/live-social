@@ -9,12 +9,21 @@ function stripHash(input = "") {
     return input.replace(/#/gm, "")
 }
 
-function routeByURL(url) {
-    url = new URL(url);
-    route(stripHash(url.hash));
+function extractQuery(input = "") {
+    const [hash, search] = input.split("?")
+    return {
+        hash: stripHash(hash),
+        params: new URLSearchParams(search)
+    }
 }
 
-async function route(location) {
+function routeByURL(url) {
+    url = new URL(url);
+    const { hash, params } = extractQuery(url.hash)
+    route(hash, params);
+}
+
+async function route(location, params = new URLSearchParams()) {
     switch (location.toLocaleLowerCase()) {
         case "/":
             return await routes.home()
@@ -25,7 +34,7 @@ async function route(location) {
         case "/register":
             return await routes.register()
         case "/profile":
-            return await routes.profile()
+            return await routes.profile(params.get("name"))
         default:
             return await routes.notFound()
     }
