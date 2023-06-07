@@ -1,8 +1,17 @@
 import * as routes from "./routes/index.js";
+import { me } from "./api/utilities/me.js";
 
 export function router() {
     updateRoute()
     window.addEventListener("hashchange", ({ newURL }) => routeByURL(newURL));
+}
+
+export function authGuard() {
+    const user = me();
+    if (!user || !user.name) {
+        redirect("#/login")
+    }
+    throw new Error("401: Not Authorized")
 }
 
 export function updateRoute() {
