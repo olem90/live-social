@@ -1,0 +1,1 @@
+export { getPost as get } from "./get.js"

@@ -1,0 +1,1 @@
+export { listPosts as list } from "./list.js";
