@@ -1,19 +1,12 @@
-import { NAMESPACE } from "../../constants.js";
+import { API_POSTS, API_PROFILE_POSTS, DEFAULT_POSTS_PARAMS } from "../../constants.js";
+import { fetchWrapper } from "../utilities/fetchWrapper.js";
 
-export function listPosts(options = {
-    sort: "created",
-    sortOrder: "desc",
-    limit: 10,
-    offset: 0,
-    _tag: NAMESPACE,
-    _author: true,
-    _reactions: true,
-    _comments: true
-}, user) {
+export async function listPosts(options = DEFAULT_POSTS_PARAMS, user) {
+    let endpoint = API_POSTS;
 
     if (user) {
-        // Use profile/name/posts endpoint
-    } else {
-        // Use posts endpoint
+        endpoint = API_PROFILE_POSTS(user);
     }
+
+    return await fetchWrapper(endpoint, options);
 }
