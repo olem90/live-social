@@ -5,12 +5,16 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "sass src/scss:dist/css"
+    "build": "sass src/scss:dist/css",
+    "watch": "sass --watch src/scss:dist/css"
   },
   "keywords": [],
   "author": "Oliver Dipple <oliver.dipple@noroff.no>",
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.62.1"
+  },
+  "dependencies": {
+    "bootstrap": "^5.3.0"
   }
 }
