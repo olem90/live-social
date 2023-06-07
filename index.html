@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,15 @@
 
     <script type="module" src="/src/js/index.js"></script>
 </head>
+
 <body>
     <h1>This is a test page</h1>
-    <a href="#/feed" class="btn btn-primary">Feed</a>
-    <a href="#/" class="btn btn-primary">Home</a>
+    <div class="btn-group">
+        <a href="#/feed" class="btn btn-secondary">Feed</a>
+        <a href="#/" class="btn btn-primary">Home</a>
+        <a href="#/profile" class="btn btn-success">My Profile</a>
+        <a href="#/profile?name=Example" class="btn btn-info">Example Profile</a>
+    </div>
 </body>
+
 </html>
