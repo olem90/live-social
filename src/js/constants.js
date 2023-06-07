@@ -1,6 +1,11 @@
 export const NAMESPACE = "live-social";
 
 export const API_BASE = "https://api.noroff.dev/api/v1/social/";
+export const API_PATH_AUTH = "auth/";
+export const API_PATH_AUTH_REGISTER = `${API_PATH_AUTH}register`;
+export const API_PATH_AUTH_LOGIN = `${API_PATH_AUTH}login`;
+export const API_AUTH_REGISTER = `${API_BASE}${API_PATH_AUTH_REGISTER}`;
+export const API_AUTH_LOGIN = `${API_BASE}${API_PATH_AUTH_LOGIN}`;
 export const API_PATH_POSTS = "posts/";
 export const API_PATH_POST = (id) => `${API_PATH_POSTS}${id}`;
 export const API_POSTS = `${API_BASE}${API_PATH_POSTS}`;
@@ -11,6 +16,7 @@ export const API_PATH_PROFILE_POSTS = (name) => (`${API_PATH_PROFILE(name)}/${AP
 export const API_PROFILES = `${API_BASE}${API_PATH_PROFILES}`;
 export const API_PROFILE = (name) => (`${API_BASE}${API_PATH_PROFILE(name)}`);
 export const API_PROFILE_POSTS = (name) => (`${API_PROFILE(name)}/${API_PATH_POSTS}`);
+
 
 export const DEFAULT_POST_PARAMS = {
     _author: true,
