@@ -1,3 +1,5 @@
+import * as routes from "./routes/index.js";
+
 export function router() {
     const hash = window.location.hash;
     route(stripHash(hash))
@@ -11,15 +13,19 @@ function stripHash(input = "") {
     return input.replace(/#/gm, "")
 }
 
-function route(location) {
+async function route(location) {
     switch (location.toLocaleLowerCase()) {
         case "/":
-            console.log("<HomePage>")
-            break;
+            return await routes.home()
         case "/feed":
-            console.log("<FeedPage>")
-            break;
+            return await routes.feed()
+        case "/login":
+            return await routes.login()
+        case "/register":
+            return await routes.register()
+        case "/profile":
+            return await routes.profile()
         default:
-            console.log("<404>");
+            return await routes.notFound()
     }
 }
