@@ -1,16 +1,17 @@
 import * as routes from "./routes/index.js";
 
 export function router() {
-    const hash = window.location.hash;
-    route(stripHash(hash))
-    window.addEventListener("hashchange", ({ newURL, oldURL }) => {
-        const url = new URL(newURL);
-        route(stripHash(url.hash))
-    })
+    routeByURL(window.location.href);
+    window.addEventListener("hashchange", ({ newURL }) => routeByURL(newURL));
 }
 
 function stripHash(input = "") {
     return input.replace(/#/gm, "")
+}
+
+function routeByURL(url) {
+    url = new URL(url);
+    route(stripHash(url.hash));
 }
 
 async function route(location) {
