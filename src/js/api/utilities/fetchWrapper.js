@@ -1,8 +1,9 @@
 import { headers } from "./headers.js";
 import { errorMessage } from "./errorMessage.js";
 
-export async function fetchWrapper(endpoint, params = {}, body = null) {
+export async function fetchWrapper(endpoint, method, params = {}, body = null) {
     const url = new URL(endpoint);
+    body = body ? JSON.stringify(body) : body;
 
     Object.entries(params).forEach(([key, value]) => {
         url.searchParams.append(String(key), String(value))
@@ -10,6 +11,7 @@ export async function fetchWrapper(endpoint, params = {}, body = null) {
 
     const response = await fetch(url, {
         headers: headers(body),
+        method,
         body
     });
 
