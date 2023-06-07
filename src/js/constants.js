@@ -10,6 +10,8 @@ export const API_PATH_POSTS = "posts/";
 export const API_PATH_POST = (id) => `${API_PATH_POSTS}${id}`;
 export const API_POSTS = `${API_BASE}${API_PATH_POSTS}`;
 export const API_POST = (id) => (`${API_POSTS}${id}`);
+export const API_POST_REACT = (id, symbol) => (`${API_POST(id)}/react/${symbol}`);
+export const API_POST_COMMENT = (id) => (`${API_POST(id)}/comment`);
 export const API_PATH_PROFILES = "profiles/";
 export const API_PATH_PROFILE = (name) => (`${API_PATH_PROFILES}${name}`);
 export const API_PATH_PROFILE_POSTS = (name) => (`${API_PATH_PROFILE(name)}/${API_PATH_POSTS}`);
