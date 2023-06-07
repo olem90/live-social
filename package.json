@@ -4,9 +4,13 @@
   "description": "An example social media client written in vanilla JavaScript.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "sass src/scss:dist/css"
   },
   "keywords": [],
   "author": "Oliver Dipple <oliver.dipple@noroff.no>",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.62.1"
+  }
 }
