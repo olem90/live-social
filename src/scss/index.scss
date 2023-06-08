@@ -3,3 +3,9 @@
 @import "variables-dark";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+img {
+    &:empty {
+        display: none;
+    }
+}

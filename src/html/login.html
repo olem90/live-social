@@ -3,9 +3,14 @@
 </head>
 
 <form action="#/profile" class="login p-3 bg-dark">
-    <div class="form-floating mb-3">
-        <input type="email" name="email" id="email" class="form-control" placeholder="Email" />
-        <label for="email">Email</label>
+    <div class="input-group mb-3">
+        <span class="input-group-text">
+            <img src="{{avatar}}" class="img-fluid" alt="Avatar">
+        </span>
+        <div class="form-floating">
+            <input type="email" name="email" id="email" class="form-control" placeholder="Email" value="{{email}}" />
+            <label for="email">Email</label>
+        </div>
     </div>
     <div class="form-floating mb-3">
         <input type="password" name="password" id="password" class="form-control" placeholder="Password" />
