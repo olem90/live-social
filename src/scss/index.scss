@@ -3,3 +3,12 @@
 @import "variables-dark";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/bootstrap";
+
+dialog {
+    @extend .alert;
+    @extend .mb-auto;
+
+    &::backdrop {
+        background: rgba(0, 0, 0, 0.8);
+    }
+}
