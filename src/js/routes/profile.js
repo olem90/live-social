@@ -13,6 +13,4 @@ export async function profileRoute(name) {
     }
 
     loadTemplate(template, user)
-
-    console.log(`<Profile name="${name}">`);
 }

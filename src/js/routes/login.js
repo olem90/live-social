@@ -7,5 +7,4 @@ export async function loginRoute() {
     const template = "login";
     await loadTemplate(template, user);
     login();
-    console.log("<Login>");
 }

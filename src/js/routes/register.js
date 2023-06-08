@@ -5,5 +5,4 @@ export async function registerRoute() {
     const template = "register";
     await loadTemplate(template);
     register();
-    console.log("<Register>");
 }
