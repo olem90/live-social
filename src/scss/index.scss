@@ -12,3 +12,15 @@ dialog {
         background: rgba(0, 0, 0, 0.8);
     }
 }
+
+img {
+    &:not([src]), &[src=""] {
+        display: none;
+    }
+}
+
+a {
+    &.card {
+        text-decoration: none;
+    }
+}
