@@ -1,8 +1,7 @@
 export function trySetEvent(selector, eventType, listener = () => {}) {
-    const target = document.querySelector(selector);
-    if (target) {
+    const targets = document.querySelectorAll(selector);
+    console.log(targets, selector);
+    targets.forEach(target => {
         target.addEventListener(eventType, listener)
-    } else {
-        // redirect to an error page?
-    }
+    })
 }

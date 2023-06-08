@@ -1,3 +1,6 @@
-import { linkInterceptor } from "./utilities/index.js";
+import * as listeners from "./listeners/index.js";
 
-linkInterceptor()
+export function ui() {
+    listeners.navigate();
+    listeners.logout();
+}

@@ -1,7 +1,7 @@
 import * as routes from "./routes/index.js";
 
-export function router() {
-    updateRoute()
+export async function router() {
+    await updateRoute()
     window.addEventListener("hashchange", ({ newURL }) => routeByURL(newURL));
 }
 
@@ -11,14 +11,14 @@ export function authGuard() {
     }
 }
 
-export function updateRoute() {
-    routeByURL(window.location.href);
+export async function updateRoute() {
+    await routeByURL(window.location.href);
 }
 
-export function redirect(path = "") {
+export async function redirect(path = "") {
     path = path.charAt(0) === "#" ? path : `#${path}`;
     window.history.pushState("", undefined, path)
-    updateRoute()
+    await updateRoute()
 }
 
 export function stripHash(input = "") {
@@ -33,7 +33,7 @@ export function extractQuery(input = "") {
     }
 }
 
-export function routeByURL(url) {
+export async function routeByURL(url) {
     url = new URL(url);
     const { hash, params } = extractQuery(url.hash)
     route(hash, params);
