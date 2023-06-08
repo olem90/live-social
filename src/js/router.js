@@ -15,7 +15,8 @@ export function updateRoute() {
     routeByURL(window.location.href);
 }
 
-export function redirect(path) {
+export function redirect(path = "") {
+    path = path.charAt(0) === "#" ? path : `#${path}`;
     window.history.pushState("", undefined, path)
     updateRoute()
 }
