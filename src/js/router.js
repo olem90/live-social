@@ -42,6 +42,7 @@ export async function routeByURL(url) {
 export async function route(location, params = new URLSearchParams()) {
     switch (location.toLocaleLowerCase()) {
         case "/":
+        case "":
             return await routes.home()
         case "/feed":
             return await routes.feed()
