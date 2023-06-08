@@ -52,6 +52,8 @@ export async function route(location, params = new URLSearchParams()) {
             return await routes.register()
         case "/profile":
             return await routes.profile(params.get("name"))
+        case "/search":
+            return await routes.search(params.get("query"))
         default:
             return await routes.notFound()
     }

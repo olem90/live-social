@@ -5,4 +5,5 @@ export function ui() {
     authVisibility()
     listeners.navigate();
     listeners.logout();
+    listeners.search();
 }

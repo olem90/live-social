@@ -1,9 +1,9 @@
 import { loadTemplate } from "../template.js";
-import { registerListener } from "../ui/listeners/registerListener.js";
+import { register } from "../ui/listeners/index.js";
 
 export async function registerRoute() {
     const template = "register";
     await loadTemplate(template);
-    registerListener();
+    register();
     console.log("<Register>");
 }
