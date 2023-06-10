@@ -1,4 +1,5 @@
 import * as routes from "./routes/index.js";
+import { ui } from "./ui/index.js";
 
 export async function router() {
     await updateRoute()
@@ -29,7 +30,7 @@ export function extractQuery(input = "") {
     const [hash, search] = input.split("?")
     return {
         hash: stripHash(hash),
-        params: Object.fromEntries((new URLSearchParams(search)).entries())
+        params: new URLSearchParams(search)
     }
 }
 
@@ -43,20 +44,29 @@ export async function route(location, params = new URLSearchParams()) {
     switch (location.toLocaleLowerCase()) {
         case "/":
         case "":
-            return await routes.home()
+            await routes.home()
+            break;
         case "/feed":
-            return await routes.feed()
+            await routes.feed()
+            break;
         case "/login":
-            return await routes.login()
+            await routes.login()
+            break;
         case "/register":
-            return await routes.register()
+            await routes.register()
+            break;
         case "/profile":
-            return await routes.profile(params.get("name"))
+            await routes.profile(params.get("name"))
+            break;
         case "/search":
-            return await routes.search(params.get("query"))
+            await routes.search(params.get("query"))
+            break;
         case "/post":
-            return await routes.post(params.get("id"))
+            await routes.post(params.get("id"))
+            break;
         default:
-            return await routes.notFound()
+            await routes.notFound()
     }
+
+    ui()
 }

@@ -13,7 +13,6 @@ export async function loadTemplate(name = "notFound", variables = {}, target = d
     }
 
     target.append(html)
-    ui()
 }
 
 export function replaceTemplateVariables(template = "", variables = {}) {
