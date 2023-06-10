@@ -29,7 +29,7 @@ export function extractQuery(input = "") {
     const [hash, search] = input.split("?")
     return {
         hash: stripHash(hash),
-        params: new URLSearchParams(search)
+        params: Object.fromEntries((new URLSearchParams(search)).entries())
     }
 }
 
@@ -54,6 +54,8 @@ export async function route(location, params = new URLSearchParams()) {
             return await routes.profile(params.get("name"))
         case "/search":
             return await routes.search(params.get("query"))
+        case "/post":
+            return await routes.post(params.get("id"))
         default:
             return await routes.notFound()
     }
