@@ -1,0 +1,29 @@
+<head>
+    <link rel="stylesheet" href="/dist/css/index.css">
+</head>
+
+<form class="post" id="{{id}}">
+    <div class="form-floating mb-3">
+        <input type="text" id="title" name="title" class="form-control" placeholder="Title" value="{{title}}">
+        <label for="title">Title</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="url" id="media" name="media" class="form-control" placeholder="Media" value="{{media}}">
+        <label for="media">Media</label>
+    </div>
+
+    <div class="input-group mb-3 tags">
+        <div class="form-floating tag">
+            <input type="text" name="[tags]" class="form-control" placeholder="New Tag">
+            <label>New Tag</label>
+        </div>
+        <button type="button" class="btn btn-sm btn-success">Add Tag</button>
+    </div>
+
+    <div class="form-floating mb-3">
+        <textarea name="body" id="body" class="form-control" cols="30" rows="30" placeholder="Body">{{body}}</textarea>
+        <label for="body">Body</label>
+    </div>
+    
+    <button type="submit" class="btn btn-outline-success w-100">Submit</button>
+</form>

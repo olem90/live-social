@@ -5,4 +5,5 @@ export { registerRoute as register } from "./register.js";
 export { profileRoute as profile } from "./profile.js";
 export { searchRoute as search } from "./search.js";
 export { postRoute as post } from "./post.js";
+export { createEditPostRoute as createEditPost } from "./createEditPost.js";
 export { notFoundRoute as notFound } from "./404.js";

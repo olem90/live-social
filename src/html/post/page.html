@@ -8,4 +8,8 @@
     <div class="content">
         {{body}}
     </div>
+    <div class="btn-group">
+        <button class="btn btn-danger" data-action="post-delete" data-id="{{id}}">Delete Post</button>
+        <a href="/post/edit?id={{id}}" class="btn btn-success">Edit Post</a>
+    </div>
 </div>
