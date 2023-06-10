@@ -2,14 +2,30 @@
     <link rel="stylesheet" href="/dist/css/index.css">
 </head>
 
-<div class="post page">
+<div class="post page" data-author="{{author.name}}" id="{{id}}">
     <h1 class="fw-bold">{{title}}</h1>
-    <h2 class="fw-light">By {{author.name}}</h2>
-    <div class="content">
+    <h2 class="fw-light">By <a href="/profile?name={{author.name}}">{{author.name}}</a></h2>
+    <div class="content mb-3">
         {{body}}
     </div>
-    <div class="btn-group">
-        <button class="btn btn-danger" data-action="post-delete" data-id="{{id}}">Delete Post</button>
-        <a href="/post/edit?id={{id}}" class="btn btn-success">Edit Post</a>
+    <div class="btn-group btn-group-sm reactions mb-3">
+        <button class="btn btn-outline-primary react" data-symbol="👍">👍 <span class="badge bg-light text-dark">1</span></button>
+    </div>
+    <div class="btn-group w-100 mb-3">
+        <button class="btn btn-primary">Bookmark</button>
+        <button class="btn btn-danger" data-action="post-delete" data-id="{{id}}" data-owner="true">Delete Post</button>
+        <a href="/post/edit?id={{id}}" class="btn btn-success" data-owner="true">Edit Post</a>
+        <button class="btn btn-info react">React</button>
+    </div>
+    <div class="comments">
+        <form class="comment">
+            <div class="form-floating mb-3">
+                <textarea name="body" class="form-control" id="body" cols="30" rows="10" placeholder="Comment"></textarea>
+                <label for="body">Comment</label>
+            </div>
+            <div class="btn-group btn-group-sm w-100">
+                <button class="btn btn-outline-success">Send</button>
+            </div>
+        </form>
     </div>
 </div>

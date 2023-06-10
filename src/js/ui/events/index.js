@@ -6,3 +6,4 @@ export { onSearch as search } from "./onSearch.js";
 export { onNewTag as newTag } from "./onNewTag.js";
 export { onPostForm as postForm } from "./onPostForm.js";
 export { onPostDelete as postDelete } from "./onPostDelete.js";
+export { onReact as react } from "./onReact.js";

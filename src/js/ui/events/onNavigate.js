@@ -1,8 +1,7 @@
 import { redirect } from "../../router.js";
-import { nearestAncestor } from "../utilities/nearestAncestor.js";
 
 export function onNavigate(event = new MouseEvent()) {
-    const target = nearestAncestor(event.target);
+    const target = event.target.closest("a");
     if (target) {
         const url = new URL(target.href);
         if (url.hostname === location.hostname) {

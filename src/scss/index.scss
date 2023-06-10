@@ -28,3 +28,7 @@ a {
 .avatar {
     max-width: 1em;
 }
+
+[data-owner]:not(.active) {
+    display: none;
+}

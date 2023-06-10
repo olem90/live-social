@@ -7,3 +7,4 @@ export { searchListener as search } from "./searchListener.js";
 export { newTagListener as newTag } from "./newTagListener.js";
 export { postFormListener as postForm } from "./postFormListener.js";
 export { postDeleteListener as postDelete } from "./postDeleteListener.js";
+export { reactListener as react } from "./reactListener.js";
