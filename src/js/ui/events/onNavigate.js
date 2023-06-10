@@ -4,8 +4,8 @@ export function onNavigate(event = new MouseEvent()) {
     if (event.target.tagName === "A") {
         const url = new URL(event.target.href);
         if (url.hostname === location.hostname) {
-            event.preventDefault()
-            redirect(url.pathname)
+            event.preventDefault();
+            redirect(url.pathname + url.search)
         }
     }
 }
