@@ -1,5 +1,6 @@
 export { loginListener as login } from "./loginListener.js";
 export { registerListener as register } from "./registerListener.js";
+export { profileFormListener as profileForm } from "./profileFormListener.js";
 export { logoutListener as logout } from "./logoutListener.js";
 export { navigateListener as navigate } from "./navigateListener.js";
 export { searchListener as search } from "./searchListener.js";
