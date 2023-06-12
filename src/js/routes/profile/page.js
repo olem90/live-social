@@ -17,6 +17,6 @@ export async function profilePageRoute(name) {
     });
 
     posts.forEach(post => {
-        loadTemplate("post/list", { ...post }, document.querySelector(".posts"), false);
+        loadTemplate("post/list", { ...post }, ".posts", false);
     })
 }

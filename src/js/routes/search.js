@@ -6,7 +6,7 @@ export async function searchRoute(query) {
     await loadTemplate(template, { query });
     const results = await search(query);
     results.map(post => {
-        loadTemplate("post/thumbnail", { ...post }, document.querySelector(".results"), false)
+        loadTemplate("post/thumbnail", { ...post }, ".results", false)
     })
     document.querySelector(".search .spinner-grow").classList.add("d-none");
 }

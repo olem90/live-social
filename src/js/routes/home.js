@@ -6,6 +6,6 @@ export async function homeRoute() {
     const posts = await listPosts();
     
     posts.forEach(post => {
-        loadTemplate("post/list", { ...post}, document.querySelector(".posts"), false);
+        loadTemplate("post/list", { ...post}, ".posts", false);
     })
 }
