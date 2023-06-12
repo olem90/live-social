@@ -46,7 +46,7 @@ export const DEFAULT_POST_PARAMS = {
 export const DEFAULT_POSTS_PARAMS = {
     ...DEFAULT_POST_PARAMS,
     ...DEFAULT_LIST_PARAMS,
-    _tag: NAMESPACE
+    // _tag: NAMESPACE
 }
 
 export const DEFAULT_PROFILE_PARAMS = {
