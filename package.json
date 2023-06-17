@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint src/**/*.js",
     "build": "sass src/scss:dist/css",
     "watch": "sass --watch src/scss:dist/css",
     "dev": "npm run watch & live-server"
@@ -13,7 +14,9 @@
   "author": "Oliver Dipple <oliver.dipple@noroff.no>",
   "license": "ISC",
   "devDependencies": {
+    "eslint": "^8.43.0",
     "live-server": "^1.2.2",
+    "prettier": "^2.8.8",
     "sass": "^1.62.1"
   },
   "dependencies": {
